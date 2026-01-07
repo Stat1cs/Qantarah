@@ -1,0 +1,163 @@
+{
+  "site": {
+    "name": "Qantarah",
+    "nameAr": "قنطرة"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "apps": "Apps",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "cta": {
+    "getStarted": "Get started",
+    "signIn": "Sign in",
+    "startFree": "Start free now",
+    "requestDemo": "Request a demo",
+    "contactUs": "Contact us"
+  },
+  "home": {
+    "badge": "Unified communication platform",
+    "hero": {
+      "title": "Let site visitors contact you via Messenger",
+      "subtitle": "The widget displays on every page of your site and lets you offer as many contact methods as you want.",
+      "noCard": "no credit card required"
+    },
+    "trust": {
+      "prefix": "Trusted by",
+      "value": "5000+",
+      "suffix": "companies"
+    },
+    "widget": {
+      "title": "How would you like to contact us?",
+      "subtitle": "Average response time: 2 hours",
+      "opt1": "Message via mobile app",
+      "opt2": "Message via Messenger",
+      "opt3": "Message via another app"
+    },
+    "features": {
+      "title": "Features",
+      "subtitle": "Everything you need to manage customer communications in one place",
+      "cards": {
+        "channelsTitle": "50+ contact channels",
+        "channelsBody": "Let your customers contact you via their prefered messenger. WhatsApp, Viber, Telegram, and over 50 communication channels covered.",
+        "liveChatTitle": "Full-featured live chat",
+        "liveChatBody": "Our service provides a full-featured live chat widget that can help you to communicate with your customers instantly.",
+        "customTitle": "Fully-customizable widget",
+        "customBody": "Customize your widget color, style, icons, animation, position, etc... to fit your site branding. You can set it up separately for desktop and mobile devices."
+      }
+    },
+    "apps": {
+      "title": "Supported apps",
+      "more": "+40 more"
+    },
+    "pricing": {
+      "title": "Simple and transparent pricing",
+      "subtitle": "No hidden fees",
+      "free": "Free",
+      "freePrice": "Free",
+      "pro": "Professional",
+      "proPrice": "99",
+      "proPeriod": "/ month",
+      "enterprise": "Enterprise",
+      "enterprisePrice": "Custom",
+      "choose": "Choose this plan"
+    },
+    "ctaBanner": {
+      "title": "Ready to get started?",
+      "subtitle": "Join thousands of companies using Qantarah to communicate with their customers",
+      "note": "No credit card required to start"
+    }
+  },
+  "featuresPage": {
+    "title": "Features",
+    "messengersTitle": "Messengers",
+    "messengersBody": "Make it easy for your visitors to communicate in the way they prefer. Choose the channels that can help you convert visitors into customers, such as WhatsApp, Facebook Messenger, chat, links, forms, and more. You can also add the live chat for added convenience.",
+    "socialTitle": "Social networks",
+    "socialBody": "You can expand your reach and connect with audiences on a variety of social networks. Whether you prefer the visual focus of Instagram, the professional networking of LinkedIn, or the real-time conversations of X, you can use custom icons and links to make it easy for users to find and follow you wherever you are online.",
+    "layoutsTitle": "Predefined layouts",
+    "layoutsBody": "Choose one which suits you best. You can set one layout for desktop and another for mobile device.",
+    "promptTitle": "Prompt messages",
+    "promptBody": "Display attractive and automated greating messages.",
+    "scheduleTitle": "Schedule",
+    "scheduleBody": "Set display time for each contact channel or whole widget.",
+    "devicesTitle": "Devices",
+    "devicesBody": "Set devices for each contact channel or whole widget.",
+    "liveChatSystemTitle": "Full-featured built-in live chat system",
+    "agentsTitle": "Build your own customer support team",
+    "agentsBody": "With chat agents functionality you can add your agents to handle all incoming live chat messages. Each chat agent can login to his own agent dashboard to handle and reply the messages.",
+    "telegramGatewayTitle": "Telegram gateway",
+    "telegramGatewayBody": "Receive and reply incoming messages in the Telegram app.",
+    "formsTitle": "Built-in forms",
+    "formsNote1": "You can create your own forms using our form builder tool.",
+    "formsNote2": "Add or remove fields and buttons, change labels, placeholders, position, etc...",
+    "formsNotifyTitle": "Get notification about each form submission.",
+    "anySiteTitle": "Works on any site",
+    "anySiteBody": "Integrate to any custom site, CMS or SiteBuilder via Embed code. Or download dedicated plugin for CMS.",
+    "integrationsTitle": "Usefull integrations",
+    "integrationsBody": "Connect with existing tools."
+  },
+  "faqPage": {
+    "title": "Frequently asked questions",
+    "q1": "What is this service for?",
+    "a1": "With this service you can easily add the multi-tool contact button to your website, so your customers can easily contact you with their preffered messenger or live chat widget.",
+    "q2": "Can I use this service for free?",
+    "a2": "Yes, you can use it for free within unlimited time, but with some functional limitations. To compare free plan with other plans, please visit the pricing section.",
+    "q3": "Why do I need to set up multiple contact channels on my site?",
+    "a3": "For example, if a customers visits your website for a few minutes but is on WhatsApp all day, they might prefer to communicate directly through it. This is because they're already on WhatsApp, checking notifications and reading messages. So, some people love WhatsApp, some uses Messenger, others - Telegram. So let your customers contact you with their prefered messenger. Also, you can add contact forms, so people can leave messages.",
+    "q4": "Can I display a single button instead of channels menu?",
+    "a4": "Yes, you can switch the mode to a \"Signle channel\" to display a single channel button instead of multi-channel menu.",
+    "q5": "Which channels I can use with this service?",
+    "a5": "We support almost every messenger and social network. WhatsApp, Telegram, Facebook Messenger, Viber, anything you want. Please visit this page for complete list.",
+    "q6": "Can I display some greating messages?",
+    "a6": "Yes you can! Those messages are very attractive, they are can drive more contacts to you. Another great feature is to display unread bubble near the contact button. It attract the people attention and work as a call-to-action.",
+    "q7": "Is there a live chat widget?",
+    "a7": "Yes, we have a full-featured live chat widget. We also have an admin live chat widget, so you can integrate it into your site's admin area to receive and reply live chat messages.",
+    "q8": "Can I use live chat widget separately?",
+    "a8": "Yes, you can use it apart from the multi-tool widget.",
+    "q9": "Can I add other people to handle incoming messages?",
+    "a9": "Yes, we have agents functionality. Agents are people that can handle all your incoming messages. Agents functionality available in Pro and Multisite plans.",
+    "q10": "Can I install the widget on my client's website?",
+    "a10": "Yes, for this purpose we have a special feature calls \"Agency\". With that feature you can create Pro plan sub accounts and deliver them to your clients. Then clients can login to their accounts, setup contact channels, manage incoming messages, etc... Agency feature include 5 clients accounts, then you can buy additional clients for 3 USD / client. You will also receive 50% affiliate if your clients will use any paid features.",
+    "q11": "How can I activate agency feature?",
+    "a11": "To activate an agency, you must have either the Unlimited or Basic agency plan.",
+    "q12": "Is there a contact form widget?",
+    "a12": "Yes, you can add a contact or any other form into a widget. You have some forms by default in your account (such as callback form, email form, etc...); You can customize these forms - add or remove fields, change labels, titles, etc... You also can create new forms and then add them into a widget.",
+    "q13": "Can I receive some notifications when form submited?",
+    "a13": "Yes, each form can be configured to send a notifications on submit. So you can receive these notifications: email, SMS, Telegram or WebPush. You can also set up PerfexCRM integration to automatically create lead in the PerfexCRM. Or set up the FreshSales integration to create a contact in the FreshSales CRM. If you need some custom integration, you can use a Webhook form call. This webhook will fire on each form submit. So you can do some custom actions.",
+    "q14": "Can I receive some notifications on incoming live chat messages?",
+    "a14": "Certainly! You can receive notifications about new chats through our app, including push notifications, email alerts, Telegram updates, WebPush notifications, and SMS messages.",
+    "q15": "Can I integrate forms with PerfexCRM?",
+    "a15": "Yes, you can set up the PerfexCRM integration and then receive a lead into the PerfexCRM on form submit.",
+    "q16": "Can I integrate forms with FreshSales CRM?",
+    "a16": "Yes, you can set up the FreshSales integration and then receive a contact into the FreshSales on form submit.",
+    "q17": "Can I customize email templates?",
+    "a17": "Yes, you can use default templates or upload your own html templates. You can also customize existing email template by editing the html code.",
+    "q18": "Can I hide a widget on some pages of my site?",
+    "a18": "Yes you can. In the Advanced settings of the widget you set the pages of your site which you want to display or hide the widget. Also you can do that for each contact channel.",
+    "q19": "Can I hide a widget some days?",
+    "a19": "Yes, in the advanced settings of the widget you can set the date and time when the widget should be visible on your site. You can also hide each contact channels based on date and time."
+  },
+  "pricingPage": {
+    "title": "Pricing",
+    "subtitle": "Choose a plan that fits your needs.",
+    "viewPricing": "View pricing"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "subtitle": "Reach out for sales or support.",
+    "emailLabel": "Email"
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "privacyPlaceholder": "Update this page with your policy text.",
+    "termsPlaceholder": "Update this page with your terms text."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
+
