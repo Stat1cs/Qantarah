@@ -21,8 +21,8 @@
   "home": {
     "badge": "Unified communication platform",
     "hero": {
-      "title": "Let site visitors contact you via Messenger",
-      "subtitle": "The widget displays on every page of your site and lets you offer as many contact methods as you want.",
+      "title": "Let site visitors contact you through their favourite channel",
+      "subtitle": "Qantarah provides a unified platform for your customers to contact you via any channel. The widget displays on every page of your site and lets you offer as many contact methods as you want.",
       "noCard": "no credit card required"
     },
     "trust": {
@@ -66,6 +66,7 @@
       "growthYearly": "Yearly $350",
       "billingMonthly": "Monthly",
       "billingYearly": "Yearly",
+      "savePerYear": "Save ${amount}/year",
       "mostPopular": "Most popular",
       "choose": "Choose this plan"
     },
@@ -161,6 +162,8 @@
     "termsPlaceholder": "Update this page with your terms text."
   },
   "footer": {
+    "linksTitle": "Links",
+    "connectTitle": "Connect",
     "rights": "All rights reserved."
   }
 }

@@ -36,9 +36,10 @@ export default async function HomePage() {
         </div>
 
         <Container>
-          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+          <div dir="ltr" className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
             {/* Text */}
             <div
+              dir={isRtl ? "rtl" : "ltr"}
               className={[
                 "text-center",
                 isRtl ? "lg:order-2 lg:text-right" : "lg:order-1 lg:text-left"
@@ -61,6 +62,7 @@ export default async function HomePage() {
                   "mt-7 flex flex-col gap-3 sm:flex-row sm:items-center",
                   isRtl ? "justify-center lg:justify-end" : "justify-center lg:justify-start"
                 ].join(" ")}
+                dir="ltr"
               >
                 <a
                   href={anychatUrl("/register")}
@@ -81,6 +83,7 @@ export default async function HomePage() {
                   "mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-black/45",
                   isRtl ? "justify-center lg:justify-end" : "justify-center lg:justify-start"
                 ].join(" ")}
+                dir="ltr"
               >
                 <span className="opacity-50">•</span>
                 {["WhatsApp", "Messenger", "Telegram", "Discord"].map((x) => (
@@ -101,8 +104,11 @@ export default async function HomePage() {
             >
               <div className="absolute -inset-6 rounded-[2.5rem] bg-white/60 blur-xl" />
               <div className="relative rounded-[2.5rem] border border-black/10 bg-white p-3 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
-                <div className="rounded-[2rem] border border-black/10 bg-[#f9fafb] p-4">
-                  <div className="flex items-center justify-between">
+                <div
+                  className="rounded-[2rem] border border-black/10 bg-[#f9fafb] p-4"
+                  dir={isRtl ? "rtl" : "ltr"}
+                >
+                  <div className={["flex items-center justify-between", isRtl ? "flex-row-reverse" : ""].join(" ")}>
                     <div className="text-xs font-semibold text-black/70">{t("site.name")}</div>
                     <div className="h-2 w-10 rounded-full bg-black/10" />
                   </div>
@@ -110,7 +116,10 @@ export default async function HomePage() {
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3"
+                        className={[
+                          "flex items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3",
+                          isRtl ? "flex-row-reverse" : ""
+                        ].join(" ")}
                       >
                         <div className="size-8 rounded-xl bg-[color:var(--color-q-blue)]/10" />
                         <div className="flex-1">
@@ -125,10 +134,20 @@ export default async function HomePage() {
               </div>
 
               {/* Floating chips */}
-              <div className="pointer-events-none absolute -left-8 top-20 hidden rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] font-semibold text-black/70 shadow-sm sm:block">
+              <div
+                className={[
+                  "pointer-events-none absolute top-20 hidden rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] font-semibold text-black/70 shadow-sm sm:block",
+                  isRtl ? "-right-8" : "-left-8"
+                ].join(" ")}
+              >
                 Automated replies
               </div>
-              <div className="pointer-events-none absolute -right-10 top-32 hidden rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] font-semibold text-black/70 shadow-sm sm:block">
+              <div
+                className={[
+                  "pointer-events-none absolute top-32 hidden rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] font-semibold text-black/70 shadow-sm sm:block",
+                  isRtl ? "-left-10" : "-right-10"
+                ].join(" ")}
+              >
                 50+ channels
               </div>
               <div className="pointer-events-none absolute left-1/2 top-[22rem] hidden -translate-x-1/2 rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] font-semibold text-black/70 shadow-sm sm:block">
@@ -244,7 +263,7 @@ export default async function HomePage() {
           <h2 className="text-center text-3xl font-semibold text-[color:var(--color-q-blue)] sm:text-4xl">
             {t("home.apps.title")}
           </h2>
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
             {[
               {label: "WhatsApp", Icon: FaWhatsapp},
               {label: "Messenger", Icon: FaFacebookMessenger},
@@ -270,7 +289,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <PricingGrid sectionId="pricing" />
+      <PricingGrid sectionId="pricing" isRtl={isRtl} />
 
       {/* FAQ */}
       <section id="faq" className="py-14 sm:py-20">
@@ -286,7 +305,7 @@ export default async function HomePage() {
           </div>
 
           <div className="mt-6 text-center">
-            <Link href="/faq" className="text-sm font-semibold text-[color:var(--color-q-blue)] hover:opacity-80">
+            <Link href="/#faq" className="text-sm font-semibold text-[color:var(--color-q-blue)] hover:opacity-80">
               {t("nav.faq")}
             </Link>
           </div>
@@ -309,12 +328,12 @@ export default async function HomePage() {
               >
                 {t("cta.startFree")}
               </a>
-              <Link
-                href="/contact"
+              <a
+                href="#contact"
                 className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[color:var(--color-q-blue)] hover:bg-white/90"
               >
                 {t("cta.contactUs")}
-              </Link>
+              </a>
             </div>
             <p className="mt-4 text-xs text-white/85">{t("home.ctaBanner.note")}</p>
         </div>

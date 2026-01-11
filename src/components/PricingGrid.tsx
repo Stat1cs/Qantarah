@@ -28,7 +28,10 @@ function BillingToggle({
       : "bg-white text-black shadow-sm";
 
   return (
-    <div className={`mt-4 inline-flex items-center rounded-full border p-1 text-xs font-semibold ${base}`}>
+    <div
+      dir="ltr"
+      className={`inline-flex items-center whitespace-nowrap rounded-full border p-1 text-xs font-semibold ${base}`}
+    >
       <button
         type="button"
         onClick={() => onChange("monthly")}
@@ -47,6 +50,22 @@ function BillingToggle({
   );
 }
 
+function parseMoneyNumber(text: string): number | null {
+  const m = text.match(/(\d+(?:\.\d+)?)/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  return Number.isFinite(n) ? n : null;
+}
+
+function yearlySavings(monthlyText: string, yearlyText: string): number | null {
+  const m = parseMoneyNumber(monthlyText);
+  const y = parseMoneyNumber(yearlyText);
+  if (m == null || y == null) return null;
+  const save = m * 12 - y;
+  if (!Number.isFinite(save) || save <= 0) return null;
+  return Math.round(save);
+}
+
 function PlanPrice({
   billing,
   monthly,
@@ -58,27 +77,32 @@ function PlanPrice({
   yearly: string;
   tone: "light" | "dark";
 }) {
+  const t = useTranslations();
   const isMonthly = billing === "monthly";
   const primary = isMonthly ? monthly : yearly;
-  const secondary = isMonthly ? yearly : monthly;
 
-  const secondaryClass = tone === "dark" ? "text-white/80" : "text-black/55";
   const primaryClass = tone === "dark" ? "text-white" : "text-black/80";
+  const savingsClass = tone === "dark" ? "text-white/85" : "text-black/55";
+  const savings = yearlySavings(monthly, yearly);
 
   return (
     <div className="mt-3 grid gap-1">
       <div className={`text-2xl font-semibold ${primaryClass}`}>{primary}</div>
-      <div className={`text-sm font-semibold ${secondaryClass}`}>{secondary}</div>
+      {savings != null ? (
+        <div className={`text-sm font-semibold ${savingsClass}`}>{t("home.pricing.savePerYear", {amount: savings})}</div>
+      ) : null}
     </div>
   );
 }
 
 export function PricingGrid({
   showHeading = true,
-  sectionId
+  sectionId,
+  isRtl = false
 }: {
   showHeading?: boolean;
   sectionId?: string;
+  isRtl?: boolean;
 }) {
   const t = useTranslations();
   const [essentialBilling, setEssentialBilling] = useState<Billing>("monthly");
@@ -126,6 +150,9 @@ export function PricingGrid({
           {/* Growth (middle, featured) */}
           <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-[color:var(--color-q-blue)] to-[color:var(--color-q-gold)] p-6 text-white shadow-[0_18px_60px_rgba(26,58,95,0.25)]">
             <div className="pointer-events-none absolute inset-0 bg-black/20" />
+            <div className={["absolute top-4 z-10", isRtl ? "left-4" : "right-4"].join(" ")}>
+              <BillingToggle value={growthBilling} onChange={setGrowthBilling} variant="dark" />
+            </div>
             <div className="relative inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
               {t("home.pricing.mostPopular")}
             </div>
@@ -136,9 +163,8 @@ export function PricingGrid({
               yearly={t("home.pricing.growthYearly")}
               tone="dark"
             />
-            <BillingToggle value={growthBilling} onChange={setGrowthBilling} variant="dark" />
             <a
-              href={anychatUrl("/pricing")}
+              href={anychatUrl("/register")}
               className="relative mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-white/20 px-4 text-sm font-semibold text-white hover:bg-white/25"
             >
               {t("home.pricing.choose")}
@@ -151,7 +177,10 @@ export function PricingGrid({
           </div>
 
           {/* Essential */}
-          <div className="rounded-2xl border border-black/10 bg-white p-6">
+          <div className="relative rounded-2xl border border-black/10 bg-white p-6">
+            <div className={["absolute top-4 z-10", isRtl ? "left-4" : "right-4"].join(" ")}>
+              <BillingToggle value={essentialBilling} onChange={setEssentialBilling} variant="light" />
+            </div>
             <h3 className="text-lg font-semibold">{t("home.pricing.essential")}</h3>
             <PlanPrice
               billing={essentialBilling}
@@ -159,9 +188,8 @@ export function PricingGrid({
               yearly={t("home.pricing.essentialYearly")}
               tone="light"
             />
-            <BillingToggle value={essentialBilling} onChange={setEssentialBilling} variant="light" />
             <a
-              href={anychatUrl("/pricing")}
+              href={anychatUrl("/register")}
               className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-[#0b1020] px-4 text-sm font-semibold text-white hover:opacity-95"
             >
               {t("home.pricing.choose")}
