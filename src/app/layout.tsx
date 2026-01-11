@@ -35,8 +35,11 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: "/"
     },
     icons: {
-      icon: [{url: "/Qantarah/QantarahLogo.png", type: "image/png"}],
-      apple: [{url: "/Qantarah/QantarahLogo.png", type: "image/png"}]
+      icon: [
+        {url: "/icon.svg", type: "image/svg+xml"},
+        {url: "/icon.png", type: "image/png"}
+      ],
+      apple: [{url: "/apple-icon.png", type: "image/png"}]
     },
     openGraph: {
       type: "website",
