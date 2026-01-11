@@ -64,6 +64,8 @@
       "growth": "Qantarah Growth",
       "growthMonthly": "Monthly $35",
       "growthYearly": "Yearly $350",
+      "billingMonthly": "Monthly",
+      "billingYearly": "Yearly",
       "mostPopular": "Most popular",
       "choose": "Choose this plan"
     },

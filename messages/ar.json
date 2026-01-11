@@ -64,6 +64,8 @@
       "growth": "قنطرة Growth",
       "growthMonthly": "شهرياً 35$",
       "growthYearly": "سنوياً 350$",
+      "billingMonthly": "شهرياً",
+      "billingYearly": "سنوياً",
       "mostPopular": "الأكثر شيوعاً",
       "choose": "اختر هذه الخطة"
     },
