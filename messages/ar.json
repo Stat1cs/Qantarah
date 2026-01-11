@@ -58,11 +58,13 @@
       "subtitle": "لا توجد رسوم مخفية",
       "free": "المجاني",
       "freePrice": "مجاني",
-      "pro": "البروفيشنال",
-      "proPrice": "99",
-      "proPeriod": "/ شهرياً",
-      "enterprise": "الشركات الكبرى",
-      "enterprisePrice": "مخصص",
+      "essential": "قنطرة Essential",
+      "essentialMonthly": "شهرياً 20$",
+      "essentialYearly": "سنوياً 200$",
+      "growth": "قنطرة Growth",
+      "growthMonthly": "شهرياً 35$",
+      "growthYearly": "سنوياً 350$",
+      "mostPopular": "الأكثر شيوعاً",
       "choose": "اختر هذه الخطة"
     },
     "ctaBanner": {

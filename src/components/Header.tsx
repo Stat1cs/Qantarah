@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {useTranslations} from "next-intl";
+import {FiLogIn} from "react-icons/fi";
 import {LocaleSwitcher} from "@/components/LocaleSwitcher";
 import {anychatUrl} from "@/lib/anychat";
 import {Container} from "@/components/Container";
@@ -16,14 +18,14 @@ export function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3">
-            <div className="grid size-9 place-items-center rounded-xl bg-[color:var(--color-q-blue)] text-white">
-              Q
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold text-[color:var(--color-q-blue)]">
-                {tSite("name")} — {tSite("nameAr")}
-              </div>
-            </div>
+            <Image
+              src="/Qantarah/QantarahLogo.png"
+              alt={tSite("name")}
+              width={60}
+              height={60}
+              priority
+              className="size-12 rounded-xl"
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">
@@ -45,13 +47,15 @@ export function Header() {
             <LocaleSwitcher />
             <a
               href={anychatUrl("/login")}
-              className="hidden h-9 items-center rounded-full border border-black/10 px-3 text-sm font-semibold text-black hover:bg-black/[.03] sm:inline-flex"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-black hover:bg-black/3 sm:w-auto sm:px-3"
             >
-              {tCta("signIn")}
+              <FiLogIn className="text-[16px] sm:hidden" aria-hidden="true" />
+              <span className="hidden text-sm font-semibold sm:inline">{tCta("signIn")}</span>
+              <span className="sr-only sm:hidden">{tCta("signIn")}</span>
             </a>
             <a
               href={anychatUrl("/register")}
-              className="inline-flex h-9 items-center rounded-full bg-[color:var(--color-q-blue)] px-4 text-sm font-semibold text-white hover:opacity-95"
+              className="inline-flex h-9 items-center rounded-full bg-(--color-q-blue) px-4 text-sm font-semibold text-white hover:opacity-95"
             >
               {tCta("getStarted")}
             </a>

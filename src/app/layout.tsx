@@ -23,9 +23,36 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale: Locale = isLocale(rawLocale ?? "") ? (rawLocale as Locale) : "en";
   const t = await getTranslations({locale});
 
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.qantarah.chat").replace(/\/$/, "");
+  const title = `${t("site.name")} — ${t("site.nameAr")}`;
+  const description = t("home.hero.subtitle");
+
   return {
-    title: `${t("site.name")} — ${t("site.nameAr")}`,
-    description: t("home.hero.subtitle")
+    metadataBase: new URL(siteUrl),
+    title,
+    description,
+    alternates: {
+      canonical: "/"
+    },
+    icons: {
+      icon: [{url: "/Qantarah/QantarahLogo.png", type: "image/png"}],
+      apple: [{url: "/Qantarah/QantarahLogo.png", type: "image/png"}]
+    },
+    openGraph: {
+      type: "website",
+      url: siteUrl,
+      title,
+      description,
+      siteName: t("site.name"),
+      images: [{url: "/Qantarah/QantarahLogo.png", width: 512, height: 512, alt: t("site.name")}],
+      locale: locale === "ar" ? "ar_SA" : "en_US"
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+      images: ["/Qantarah/QantarahLogo.png"]
+    }
   };
 }
 
@@ -40,7 +67,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
 
   return (
     <html lang={locale} dir={dir} className={`${inter.variable} ${notoKufiArabic.variable}`}>
-      <body style={bodyStyle} className="min-h-dvh bg-[color:var(--color-background)]">
+      <body style={bodyStyle} className="min-h-dvh bg-(--color-background)">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main>{children}</main>

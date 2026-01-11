@@ -58,11 +58,13 @@
       "subtitle": "No hidden fees",
       "free": "Free",
       "freePrice": "Free",
-      "pro": "Professional",
-      "proPrice": "99",
-      "proPeriod": "/ month",
-      "enterprise": "Enterprise",
-      "enterprisePrice": "Custom",
+      "essential": "Qantarah Essential",
+      "essentialMonthly": "Monthly $20",
+      "essentialYearly": "Yearly $200",
+      "growth": "Qantarah Growth",
+      "growthMonthly": "Monthly $35",
+      "growthYearly": "Yearly $350",
+      "mostPopular": "Most popular",
       "choose": "Choose this plan"
     },
     "ctaBanner": {

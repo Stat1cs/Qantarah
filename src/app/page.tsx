@@ -81,15 +81,13 @@ export default async function HomePage() {
                   isRtl ? "justify-center lg:justify-end" : "justify-center lg:justify-start"
                 ].join(" ")}
               >
-                <span className="font-semibold text-black/60">
-                  {t("home.trust.prefix")} {t("home.trust.value")} {t("home.trust.suffix")}
-                </span>
                 <span className="opacity-50">•</span>
                 {["WhatsApp", "Messenger", "Telegram", "Discord"].map((x) => (
                   <span key={x} className="font-semibold">
                     {x}
                   </span>
                 ))}
+                <span className="opacity-50">•</span>
               </div>
             </div>
 
@@ -283,47 +281,6 @@ export default async function HomePage() {
 
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             <div className="rounded-2xl border border-black/10 bg-white p-6">
-              <h3 className="text-lg font-semibold">{t("home.pricing.enterprise")}</h3>
-              <div className="mt-3 text-2xl font-semibold text-black/80">{t("home.pricing.enterprisePrice")}</div>
-              <a
-                href="#contact"
-                className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-[#0b1020] px-4 text-sm font-semibold text-white hover:opacity-95"
-              >
-                {t("home.pricing.choose")}
-              </a>
-              <ul className="mt-6 space-y-3 text-sm text-black/70">
-                <li>✓ Custom solution</li>
-                <li>✓ Dedicated server</li>
-                <li>✓ Custom API</li>
-                <li>✓ VIP 24/7 support</li>
-              </ul>
-            </div>
-
-            <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-[color:var(--color-q-blue)] to-[color:var(--color-q-gold)] p-6 text-white shadow-[0_18px_60px_rgba(26,58,95,0.25)]">
-              <div className="pointer-events-none absolute inset-0 bg-black/20" />
-              <div className="relative inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
-                Most popular
-              </div>
-              <h3 className="relative mt-3 text-lg font-semibold">{t("home.pricing.pro")}</h3>
-              <div className="relative mt-3 flex items-end justify-center gap-2 lg:justify-start">
-                <div className="text-4xl font-semibold">{t("home.pricing.proPrice")}</div>
-                <div className="pb-1 text-sm text-white/80">{t("home.pricing.proPeriod")}</div>
-              </div>
-              <a
-                href={anychatUrl("/pricing")}
-                className="relative mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-white/20 px-4 text-sm font-semibold text-white hover:bg-white/25"
-              >
-                {t("home.pricing.choose")}
-              </a>
-              <ul className="relative mt-6 space-y-3 text-sm text-white/85">
-                <li>✓ All channels</li>
-                <li>✓ Higher limits</li>
-                <li>✓ Priority support</li>
-                <li>✓ Advanced features</li>
-              </ul>
-        </div>
-
-            <div className="rounded-2xl border border-black/10 bg-white p-6">
               <h3 className="text-lg font-semibold">{t("home.pricing.free")}</h3>
               <div className="mt-3 text-2xl font-semibold text-black/80">{t("home.pricing.freePrice")}</div>
               <a
@@ -336,6 +293,50 @@ export default async function HomePage() {
                 <li>✓ Limited channels</li>
                 <li>✓ Basic limits</li>
                 <li>✓ Email support</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-black/10 bg-white p-6">
+              <h3 className="text-lg font-semibold">{t("home.pricing.essential")}</h3>
+              <div className="mt-3 grid gap-1">
+                <div className="text-2xl font-semibold text-black/80">{t("home.pricing.essentialMonthly")}</div>
+                <div className="text-sm font-semibold text-black/50">{t("home.pricing.essentialYearly")}</div>
+              </div>
+              <a
+                href={anychatUrl("/pricing")}
+                className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-[#0b1020] px-4 text-sm font-semibold text-white hover:opacity-95"
+              >
+                {t("home.pricing.choose")}
+              </a>
+              <ul className="mt-6 space-y-3 text-sm text-black/70">
+                <li>✓ 50+ channels</li>
+                <li>✓ Live chat widget</li>
+                <li>✓ Built-in forms</li>
+                <li>✓ Useful integrations</li>
+              </ul>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-[color:var(--color-q-blue)] to-[color:var(--color-q-gold)] p-6 text-white shadow-[0_18px_60px_rgba(26,58,95,0.25)]">
+              <div className="pointer-events-none absolute inset-0 bg-black/20" />
+              <div className="relative inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">
+                {t("home.pricing.mostPopular")}
+              </div>
+              <h3 className="relative mt-3 text-lg font-semibold">{t("home.pricing.growth")}</h3>
+              <div className="relative mt-3 grid gap-1">
+                <div className="text-3xl font-semibold">{t("home.pricing.growthMonthly")}</div>
+                <div className="text-sm font-semibold text-white/80">{t("home.pricing.growthYearly")}</div>
+              </div>
+              <a
+                href={anychatUrl("/pricing")}
+                className="relative mt-6 inline-flex h-10 w-full items-center justify-center rounded-full bg-white/20 px-4 text-sm font-semibold text-white hover:bg-white/25"
+              >
+                {t("home.pricing.choose")}
+              </a>
+              <ul className="relative mt-6 space-y-3 text-sm text-white/85">
+                <li>✓ Higher limits</li>
+                <li>✓ Priority support</li>
+                <li>✓ Advanced automation</li>
+                <li>✓ Team access</li>
               </ul>
             </div>
           </div>
